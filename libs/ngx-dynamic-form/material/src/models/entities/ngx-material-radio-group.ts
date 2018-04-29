@@ -1,6 +1,6 @@
-import { NgxMaterialGroup } from '@ngx-dynamic-form/material/src/models/elements/ngx-material-group';
 import { merge } from 'lodash';
 
+import { NgxMaterialGroup } from '../entities/ngx-material-group';
 import { INgxMaterialRadioGroup } from '../interface/ngx-material-radio-group.interface';
 import { INgxMaterialRadio } from '../interface/ngx-material-radio.interface';
 

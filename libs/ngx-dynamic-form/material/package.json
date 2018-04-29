@@ -13,7 +13,11 @@
   },
   "ngPackage": {
     "lib": {
-      "entryFile": "index.ts"
+      "entryFile": "index.ts",
+      "umdModuleIds": {
+        "lodash": "_",
+        "@ngx-dynamic-form/core": "@ngx-dynamic-form/core"
+      }
     },
     "dest": "../../../node_modules/@ngx-dynamic-form/material"
   }

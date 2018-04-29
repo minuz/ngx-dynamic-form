@@ -1,8 +1,8 @@
+import { FormElementType, InputType } from '@ngx-dynamic-form/core';
 import { merge } from 'lodash';
 
 import { INgxMaterialDatepicker } from '../interface/ngx-material-datepicker.interface';
 import { NgxMaterialInput } from './ngx-material-input';
-import { FormElementType, InputType } from '@ngx-dynamic-form/core';
 
 export class NgxMaterialDatepicker extends NgxMaterialInput implements INgxMaterialDatepicker {
 

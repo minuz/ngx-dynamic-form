@@ -1,5 +1,5 @@
 import { FloatLabelType } from '@angular/material';
-import { HintPosition, FormElementType } from '@ngx-dynamic-form/core';
+import { FormElementType, HintPosition } from '@ngx-dynamic-form/core';
 import { merge } from 'lodash';
 
 import { INgxMaterialInput } from '../interface/ngx-material-input.interface';

@@ -1,9 +1,5 @@
 import { OnInit } from '@angular/core';
-import {
-  BaseFormElementComponent,
-  GroupAlignment,
-  LabelPosition
-} from '@ngx-dynamic-form/core';
+import { BaseFormElementComponent, GroupAlignment, LabelPosition } from '@ngx-dynamic-form/core';
 
 import { INgxMaterialCheckbox } from '../models/interface/ngx-material-checkbox.interface';
 import { INgxMaterialInput } from '../models/interface/ngx-material-input.interface';

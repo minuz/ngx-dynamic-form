@@ -1,7 +1,8 @@
-import { merge } from 'lodash';
-import { NgxFormElement } from '@ngx-dynamic-form/core';
-import { INgxMaterialElement } from '../interface/ngx-material-element.interface';
 import { ThemePalette } from '@angular/material';
+import { NgxFormElement } from '@ngx-dynamic-form/core';
+import { merge } from 'lodash';
+
+import { INgxMaterialElement } from '../interface/ngx-material-element.interface';
 
 export class NgxMaterialElement extends NgxFormElement
   implements INgxMaterialElement {
