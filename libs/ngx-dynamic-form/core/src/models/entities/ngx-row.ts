@@ -9,8 +9,8 @@ export class NgxFormRow implements INgxFormRow {
 
   panels?: INgxFormPanel[] = [];
   elements?: INgxFormElement[] = [];
-  rowCss?: string;
-  overrideRowCss?: string;
+  rowCss?: string | string[];
+  overrideRowCss?: string | string[];
   debug?: boolean;
   isHidden?: BooleanPredicate;
 

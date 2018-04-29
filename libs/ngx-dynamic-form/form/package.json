@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^5.1.0",
-    "@angular/core": "^5.1.0"
+    "@angular/core": "^5.1.0",
+    "@angular/form": "^5.1.0",
+    "@ngx-dynamic-form/core": "1.0.0",
+    "ng-dynamic-component": "2.0.3"
   },
   "ngPackage": {
     "lib": {

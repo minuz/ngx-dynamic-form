@@ -1,7 +1,7 @@
-import { FormModule } from './form.module';
+import { NgxDynamicFormModule } from './form.module';
 
 describe('FormModule', () => {
   it('should work', () => {
-    expect(new FormModule()).toBeDefined();
+    expect(new NgxDynamicFormModule()).toBeDefined();
   });
 });

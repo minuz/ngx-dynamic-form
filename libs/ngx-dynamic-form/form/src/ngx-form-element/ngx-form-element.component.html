@@ -1,0 +1,27 @@
+<div [ngClass]="styling?.containerCss" *ngIf="!isHidden">
+  <label *ngIf="formElement.label"
+      id="ngx-form-element-label"
+      [ngClass]="styling?.labelCss"
+      [class.label-fix]="labelFix">
+    {{formElement.label}}
+    <i *ngIf="formElement.help && formElement.helpLocation === 'label'" class="fal fa-question-circle" [matTooltip]="formElement.help"></i>
+  </label>
+  <div class="{{styling?.controlWrapperCss}}">
+    <ng-container
+      [ngComponentOutlet]="component"
+      [ndcDynamicInputs]="componentInput">
+    </ng-container>
+    <ng-container *ngFor="let validation of formElement.validations">
+      <ng-container *ngIf="validation.type === 'custom';else builtIn">
+        <mat-error *ngIf="formControl.hasError(validation.customValidationName) && !formControl.pristine">{{validation.message}}</mat-error>
+      </ng-container>
+      <ng-template #builtIn>
+        <mat-error *ngIf="formControl.hasError(validation.type) && !formControl.pristine">{{validation.message}}</mat-error>
+      </ng-template>
+    </ng-container>
+    <pre *ngIf="formElement.debug">
+      Form Element: {{formElement | json }}
+      Has Errors: {{formControl?.hasError()}}
+    </pre>
+  </div>
+</div>

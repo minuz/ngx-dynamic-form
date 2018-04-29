@@ -21,9 +21,25 @@ import { NgxMaterialTextboxComponent } from './ngx-material-input/ngx-material-t
 import { NgxMaterialSelectComponent } from './ngx-material-select/ngx-material-select.component';
 import { NgxMaterialTextareaComponent } from './ngx-material-textarea/ngx-material-textarea.component';
 
+const ModuleComponents = [
+  NgxMaterialCheckboxComponent,
+  NgxMaterialDatepickerComponent,
+  NgxMaterialFormElementComponent,
+  NgxMaterialInputComponent,
+  NgxMaterialRadioComponent,
+  NgxMaterialSelectComponent,
+  NgxMaterialTextareaComponent,
+  NgxMaterialTextboxComponent
+];
+
+export const ComponentsMap = {
+  components: ModuleComponents,
+  formElement: NgxMaterialFormElementComponent
+};
+
 @NgModule({
   imports: [
-    CommonModule, 
+    CommonModule,
     ReactiveFormsModule,
     NgxDynamicFormCoreModule,
     MatTooltipModule,
@@ -36,16 +52,7 @@ import { NgxMaterialTextareaComponent } from './ngx-material-textarea/ngx-materi
     MatDatepickerModule,
     MatMomentDateModule
   ],
-  declarations:[
-    NgxMaterialCheckboxComponent,
-    NgxMaterialDatepickerComponent,
-    NgxMaterialFormElementComponent,
-    NgxMaterialInputComponent,
-    NgxMaterialRadioComponent,
-    NgxMaterialSelectComponent,
-    NgxMaterialTextareaComponent,
-    NgxMaterialTextboxComponent
-  ],
-  exports:[NgxMaterialFormElementComponent]
+  declarations: ModuleComponents,
+  exports: ModuleComponents
 })
 export class NgxDynamicFormMaterialModule {}

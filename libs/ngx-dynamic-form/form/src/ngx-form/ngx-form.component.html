@@ -1,0 +1,30 @@
+<div [ngClass]="formModel?.wrapperCss ? formModel.wrapperCss : ''" *ngIf="formModel">
+  <form [formGroup]="formGroup" *ngIf="formGroup">
+    <ng-container *ngFor="let item of subModels">
+      <div [ngClass]="item?.wrapperCss ? item.wrapperCss : ''">
+        <ngx-form-row *ngFor="let row of item.rows"
+          [formRow]="row"
+          [formModel]="item">
+        </ngx-form-row>
+        <ngx-form-panel *ngFor="let panel of item.panels"
+          [formPanel]="panel"
+          [formModel]="item">
+        </ngx-form-panel>
+      </div>
+    </ng-container>
+    <ngx-form-row *ngFor="let row of formModel.rows"
+        [formRow]="row"
+        [formModel]="formModel">
+    </ngx-form-row>
+    <ngx-form-panel *ngFor="let panel of formModel.panels"
+        [formPanel]="panel"
+        [formModel]="formModel">
+    </ngx-form-panel>
+    <pre *ngIf="formModel.debug">
+        Form value: {{ formModel.formGroup.value | json }}
+        Form Touched: {{formModel.formGroup.touched}}
+        Form Dirty: {{formModel.formGroup.dirty}}
+        Form Valid: {{formModel.formGroup.valid}}
+    </pre>
+  </form>
+</div>

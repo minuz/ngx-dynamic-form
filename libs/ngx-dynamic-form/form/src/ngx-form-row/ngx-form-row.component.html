@@ -1,0 +1,19 @@
+<div class="row {{formRow.rowCss}} row-top-space" *ngIf="!isHidden">
+  <div class="col-md-12" *ngIf="formRow.elements">
+    <ng-container *ngFor="let formElement of formRow.elements">
+      <ngx-form-element
+        [formElement]="formElement"
+        [formModel]="formModel">
+      </ngx-form-element>
+    </ng-container>
+  </div>
+  <ng-container *ngIf="formRow.panels">
+    <ngx-form-panel *ngFor="let panel of formRow.panels"
+        [formPanel]="panel"
+        [formModel]="formModel">
+    </ngx-form-panel>
+  </ng-container>
+</div>
+<pre *ngIf="formRow.debug">
+  Form Row: {{formRow | json}}
+</pre>

@@ -27,13 +27,13 @@ export interface INgxFormRow {
    * By default this property will merge with existing css from library.
    * Should you need to override the default css, set the property overrideRowCss
    */
-  rowCss?: string;
+  rowCss?: string | string[];
 
   /**
    * @description
    * Property to determine whether the library will override defaults and use the user defined css.
    */
-  overrideRowCss?: string;
+  overrideRowCss?: string | string[];
 
   /**
    * @description

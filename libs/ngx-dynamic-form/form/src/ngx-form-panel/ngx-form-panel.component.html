@@ -1,0 +1,27 @@
+<div class="{{styling?.panelCss}}">
+  <label *ngIf="formPanel.panelLabel" class="{{styling?.panelLabelCss}">
+    {{formPanel.panelLabel}}</label>
+
+  <ng-container *ngIf="formPanel.addControlModelsWrapper;else noWrapper">
+    <div class="{{styling.controlModelsWrapperCss}}">
+      <ngx-form-element *ngFor="let formElement of formElements"
+        [formElement]="formElement"
+        [formModel]="formModel">
+      </ngx-form-element>
+      <ngx-form-row *ngFor="let row of rows"
+        [formRow]="row"
+        [formModel]="formModel">
+      </ngx-form-row>
+    </div>
+  </ng-container>
+  <ng-template #noWrapper>
+      <ngx-form-element *ngFor="let formElement of formElements"
+        [formElement]="formElement"
+        [formModel]="formModel">
+      </ngx-form-element>
+      <ngx-form-row *ngFor="let row of rows"
+        [formRow]="row"
+        [formModel]="formModel">
+      </ngx-form-row>
+  </ng-template>
+</div>
