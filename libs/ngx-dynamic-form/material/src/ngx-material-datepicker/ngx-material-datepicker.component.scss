@@ -1,0 +1,20 @@
+.fix-icon-prefix {
+    margin-left: -2px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+}
+
+// Override ripple position. Adding deep nesting to prevent overriding unwanted items.
+:host {
+    ::ng-deep {
+        .mat-icon-button {
+            & div {
+                &.mat-button-ripple,
+                &.mat-button-focus-overlay {
+                    left: -7px !important;
+                    bottom: -3px !important;
+                }
+            }
+        }
+    }
+}

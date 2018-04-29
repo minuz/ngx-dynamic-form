@@ -1,0 +1,23 @@
+<mat-form-field class="{{styling?.controlCss}}" [color]="materialSelect.color">
+  <span *ngIf="materialSelect.prefixCss" class="prefix-icon" matPrefix><i class="{{materialSelect.prefixCss}}"></i></span>
+  <mat-select [(value)]="selected"
+      [id]="elementId"
+      [placeholder]="materialSelect.placeholder"
+      [required]="materialSelect.required"
+      [panelClass]="materialSelect.panelClass"
+      [disableRipple]="materialSelect.disableRipple"
+      [multiple]="materialSelect.multiple"
+      [formControl]="formControl">
+    <mat-option *ngFor="let item of data$ | async" [value]="item.value">{{item.text}}</mat-option>
+  </mat-select>
+  <mat-hint *ngIf="materialSelect.hintLabel" align="end">{{materialSelect.hintLabel}}</mat-hint>
+  <span *ngIf="materialSelect.suffixCss" matSuffix><i class="{{materialSelect.suffixCss}}"></i></span>
+</mat-form-field>
+<pre *ngIf="materialSelect.debug">
+    Control Touched: {{formControl.touched}}
+    Control Dirty: {{formControl.dirty}}
+    Control Valid: {{formControl.valid}}
+    Control Value: {{formControl.value}}
+    Control.isHidden: {{materialSelect.isHidden ? materialSelect.isHidden(formModel, formControl, formValue) : 'Undefined'}}
+    Control.isDisabled: {{materialSelect.isDisabled ? materialSelect.isDisabled(formModel, formControl, formValue) : 'Undefined'}}
+</pre>

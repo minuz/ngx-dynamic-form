@@ -1,0 +1,24 @@
+<ng-container [ngSwitch]="materialInput.inputType">
+
+  <ng-container *ngSwitchCase="'radio'">
+    <ngx-material-radio
+      [formElement]="formElement"
+      [formModel]="formModel">
+    </ngx-material-radio>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="'checkbox'">
+    <ngx-material-checkbox
+      [formElement]="formElement"
+      [formModel]="formModel">
+    </ngx-material-checkbox>
+  </ng-container>
+
+  <ng-container *ngSwitchDefault>
+    <ngx-material-textbox
+      [formElement]="formElement"
+      [formModel]="formModel">
+    </ngx-material-textbox>
+  </ng-container>
+
+</ng-container>

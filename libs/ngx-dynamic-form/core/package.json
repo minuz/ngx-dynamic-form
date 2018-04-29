@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/package.schema.json",
+  "name": "@ngx-dynamic-form/core",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^5.1.0",
+    "@angular/core": "^5.1.0",
+    "@angular/forms": "^5.1.0",
+    "ng-dynamic-component": "2.0.3"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "umdModuleIds": {
+        "lodash": "_",
+        "uuid": "uuid",
+        "ng-dynamic-component": "ng-dynamic-component"
+      }
+    },
+    "dest": "../../../node_modules/@ngx-dynamic-form/core"
+  }
+}

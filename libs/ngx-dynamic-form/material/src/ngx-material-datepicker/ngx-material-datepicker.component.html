@@ -1,0 +1,33 @@
+<mat-form-field class="{{styling?.controlCss}}"
+  [color]="datepicker.color"
+  [hideRequiredMarker]="datepicker.hideRequiredMarker"
+  [floatLabel]="datepicker.floatLabel"
+  [hintLabel]="datepicker.hintLabel">
+
+  <input matInput
+    [id]="elementId"
+    [name]="elementName"
+    [formControl]="formControl"
+    [matDatepicker]="picker"
+    [matDatepickerFilter]="datepicker.matDatepickerFilter"
+    [placeholder]="datepicker.placeholder"
+    [min]="datepicker.min"
+    [max]="datepicker.max"
+    (dateInput)="dateInput($event)"
+    (dateChange)="dateChange($event)">
+
+  <mat-datepicker-toggle matPrefix [for]="picker" *ngIf="datepicker.iconPosition === 'prefix'">
+    <i *ngIf="datepicker.customIcon" [ngClass]="customIcon" matDatepickerToggleIcon></i>
+  </mat-datepicker-toggle>
+  <mat-datepicker-toggle matSuffix [for]="picker" *ngIf="datepicker.iconPosition === 'suffix'">
+    <i *ngIf="datepicker.customIcon" [ngClass]="customIcon" matDatepickerToggleIcon></i>
+  </mat-datepicker-toggle>
+  <mat-datepicker #picker
+    [panelClass]="datepicker.panelClass"
+    [startAt]="datepicker.defaultValue"
+    [startView]="datepicker.startView"
+    [touchUi]="datepicker.touchUi"
+    (openedStream)="openedStream($event)"
+    (closedStream)="closedStream($event)">
+  </mat-datepicker>
+</mat-form-field>

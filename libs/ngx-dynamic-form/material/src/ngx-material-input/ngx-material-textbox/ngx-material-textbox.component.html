@@ -1,0 +1,23 @@
+<mat-form-field class="{{styling?.controlCss}}"
+  [color]="textbox.color"
+  [hideRequiredMarker]="textbox.hideRequiredMarker">
+
+  <span class="prefix-icon" *ngIf="textbox.prefixCss" matPrefix><i class="{{textbox.prefixCss}}"></i></span>
+  <input matInput
+      [id]="elementId"
+      [name]="elementName"
+      [type]="textbox.inputType"
+      [formControl]="formControl"
+      [placeholder]="textbox?.placeholder"
+      [required]="textbox.required"/>
+  <span *ngIf="textbox.suffixCss" matSuffix><i class="{{textbox.suffixCss}}"></i></span>
+  <mat-hint *ngIf="textbox.hintLabel" align="end">{{textbox.hintLabel}}</mat-hint>
+</mat-form-field>
+<pre *ngIf="textbox.debug">
+  Control Touched: {{formControl.touched}}
+  Control Dirty: {{formControl.dirty}}
+  Control Valid: {{formControl.valid}}
+  Control Value: {{formControl.value}}
+  Control.isHidden: {{textbox.isHidden ? textbox.isHidden(formModel, formControl, formValue) : 'Undefined'}}
+  Control.isDisabled: {{textbox.isDisabled ? textbox.isDisabled(formModel, formControl, formValue) : 'Undefined'}}
+</pre>

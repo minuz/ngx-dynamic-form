@@ -1,0 +1,23 @@
+<mat-form-field class="{{styling?.controlCss}}"
+
+    [color]="textarea.color"
+    [hideRequiredMarker]="textarea.hideRequiredMarker"
+    [floatLabel]="textarea.floatLabel">
+  <span class="prefix-icon" *ngIf="textarea.prefixCss" matPrefix><i class="{{textarea.prefixCss}}"></i></span>
+  <textarea matInput matTextareaAutosize
+    [id]="elementId"
+    [name]="elementName"
+    [placeholder]="textarea.placeholder"
+    [formControl]="formControl">
+  </textarea>
+  <span *ngIf="textarea.suffixCss" matSuffix><i class="{{textarea.suffixCss}}"></i></span>
+  <mat-hint *ngIf="textarea.hintLabel" align="end">{{textarea.hintLabel}}</mat-hint>
+</mat-form-field>
+<pre *ngIf="textarea.debug">
+    Control Touched: {{formControl.touched}}
+    Control Dirty: {{formControl.dirty}}
+    Control Valid: {{formControl.valid}}
+    Control Value: {{formControl.value}}
+    Control.isHidden: {{formElement.isHidden ? formElement.isHidden(formModel, formControl, formValue) : 'Undefined'}}
+    Control.isDisabled: {{formElement.isDisabled ? formElement.isDisabled(formModel, formControl, formValue) : 'Undefined'}}
+</pre>

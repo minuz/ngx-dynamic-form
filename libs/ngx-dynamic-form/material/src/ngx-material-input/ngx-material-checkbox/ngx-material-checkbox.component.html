@@ -1,0 +1,56 @@
+<ng-container *ngIf="isGroupable; else singleCheckbox">
+  <div [class.stacked]="isStacked" >
+    <ng-container *ngFor="let checkbox of groupableElements">
+        <mat-checkbox
+          [id]="buildElementId(checkbox)"
+          [name]="buildElementName(checkbox)"
+          [formControl]="getControl(checkbox.name)"
+          [class.inline-spacing]="isInline"
+          [class.stacked-item]="isStacked"
+          [ngClass]="checkbox.styling?.controlCss"
+          [value]="getControl(checkbox.name)"
+          [labelPosition]="getLabelPosition(checkbox)"
+          [disableRipple]="getDisableRipple(checkbox)"
+          [color]="getColor(checkbox)"
+          [checked]="isChecked(checkbox)"
+          [hidden]="isHidden(checkbox)"
+          ngDefaultControl>
+          <span [ngClass]="checkbox.styling?.innerLabelCss">{{checkbox.checkboxLabel}}
+            <i *ngIf="checkbox.help && checkbox.helpLocation === 'innerLabel'" class="fal fa-question-circle" [matTooltip]="checkbox.help"></i>
+          </span>
+        </mat-checkbox>
+        <pre *ngIf="checkbox.debug">
+            Checkbox model: {{checkbox | json}}
+            Checkbox.checked: {{checkbox.checked ? checkbox.checked(formModel, formControl, formValue) : 'Undefined'}}
+            Checkbox.isHidden: {{checkbox.isHidden ? checkbox.isHidden(formModel, formControl, formValue) : 'Undefined'}}
+            Checkbox.isDisabled: {{checkbox.isDisabled ? checkbox.isDisabled(formModel, formControl, formValue) : 'Undefined'}}
+        </pre>
+      </ng-container>
+  </div>
+</ng-container>
+<ng-template #singleCheckbox>
+  <mat-checkbox
+    [id]="elementId"
+    [name]="elementName"
+    [formControl]="formControl"
+    [value]="checkbox.value"
+    [class.inline-spacing]="isInline"
+    [class.stacked-item]="isStacked"
+    [ngClass]="styling?.controlCss"
+    [labelPosition]="labelPosition"
+    [disableRipple]="disableRipple"
+    [color]="color"
+    [checked]="checked"
+    [hidden]="hidden"
+    ngDefaultControl>
+    <span class="{{styling?.innerLabelCss}}">{{checkbox.checkboxLabel}}
+      <i *ngIf="checkbox.help && checkbox.helpLocation === 'innerLabel'" class="fal fa-question-circle" [matTooltip]="checkbox.help"></i>
+    </span>
+  </mat-checkbox>
+  <pre *ngIf="checkbox.debug">
+      Checkbox model: {{checkbox | json}}
+      Checkbox.checked: {{checkbox.checked ? checkbox.checked(formModel, formControl, formValue) : 'Undefined'}}
+      Checkbox.isHidden: {{checkbox.isHidden ? checkbox.isHidden(formModel, formControl, formValue) : 'Undefined'}}
+      Checkbox.isDisabled: {{checkbox.isDisabled ? checkbox.isDisabled(formModel, formControl, formValue) : 'Undefined'}}
+  </pre>
+</ng-template>

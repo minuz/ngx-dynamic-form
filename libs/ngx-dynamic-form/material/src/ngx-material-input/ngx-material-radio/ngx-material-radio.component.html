@@ -1,0 +1,58 @@
+<ng-container *ngIf="isGroupable;else singleRadio">
+  <mat-radio-group class="{{styling?.groupCss}}" [formControl]="formControl" [class.stacked]="isStacked">
+    <ng-container *ngFor="let radio of groupableElements">
+      <mat-radio-button
+        [id]="buildElementId(radio)"
+        [name]="buildElementName(radio)"
+        [formControl]="formControl"
+        [value]="radio.value"
+        [class.inline-spacing]="isInline"
+        [class.stacked-item]="isStacked"
+        [ngClass]="radio.styling?.controlCss"
+        [labelPosition]="getLabelPosition(radio)"
+        [disableRipple]="getDisableRipple(radio)"
+        [color]="getColor(radio)"
+        [checked]="isChecked(radio)"
+        [hidden]="isHidden(radio)"
+        [disabled]="isDisabled(radio)"
+        ngDefaultControl>
+        <span class="{{radio.styling?.innerLabelCss}}">{{radio.radioLabel}}
+          <i *ngIf="radio.help" class="fal fa-question-circle" [matTooltip]="radio.help"></i>
+        </span>
+      </mat-radio-button>
+      <pre *ngIf="radio.debug">
+          Radio.checked: {{radio.checked ? radio.checked(formModel) : 'Undefined'}}
+          Radio.isHidden: {{radio.isHidden ? radio.isHidden(formModel) : 'Undefined'}}
+          Radio.isDisabled: {{radio.isDisabled ? radio.isDisabled(formModel) : 'Undefined'}}
+      </pre>
+    </ng-container>
+  </mat-radio-group>
+</ng-container>
+<ng-template #singleRadio>
+  <mat-radio-group [formControl]="formControl">
+    <mat-radio-button
+      [id]="elementId"
+      [name]="elementName"
+      [formControl]="formControl"
+      [value]="radio.value"
+      [class.inline-spacing]="isInline"
+      [class.stacked-item]="isStacked"
+      [ngClass]="styling?.controlCss"
+      [labelPosition]="labelPosition"
+      [disableRipple]="disableRipple"
+      [color]="color"
+      [checked]="checked"
+      [hidden]="hidden"
+      [disabled]="disabled"
+      ngDefaultControl>
+      <span class="{{styling?.innerLabelCss}}">{{radio.radioLabel}}
+        <i *ngIf="radio.help" class="fal fa-question-circle" [matTooltip]="radio.help"></i>
+      </span>
+    </mat-radio-button>
+  </mat-radio-group>
+  <pre *ngIf="radio.debug">
+      Radio.checked: {{radio.checked ? radio.checked(formModel) : 'Undefined'}}
+      Radio.isHidden: {{formElement.isHidden ? radio.isHidden(formModel) : 'Undefined'}}
+      Radio.isDisabled: {{radio.isDisabled ? radio.isDisabled(formModel) : 'Undefined'}}
+  </pre>
+</ng-template>

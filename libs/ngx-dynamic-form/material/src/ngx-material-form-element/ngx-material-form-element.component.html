@@ -1,0 +1,34 @@
+<ng-container [ngSwitch]="formElement.elementType">
+  <ng-container *ngSwitchCase="'datepicker'">
+    <ngx-material-datepicker
+      [formElement]="formElement"
+      [formModel]="formModel">
+    </ngx-material-datepicker>
+  </ng-container>
+  <ng-container *ngSwitchCase="'dynamic'">
+    <ng-container>
+      <ngx-custom-element
+        [formElement]="formElement"
+        [formModel]="formModel">
+      </ngx-custom-element>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngSwitchCase="'select'">
+    <ngx-material-select
+        [formElement]="formElement"
+        [formModel]="formModel">
+    </ngx-material-select>
+  </ng-container>
+  <ng-container *ngSwitchCase="'textarea'">
+    <ngx-material-textarea
+        [formElement]="formElement"
+        [formModel]="formModel">
+    </ngx-material-textarea>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <ngx-material-input
+        [formElement]="formElement"
+        [formModel]="formModel">
+    </ngx-material-input>
+  </ng-container>
+</ng-container>
