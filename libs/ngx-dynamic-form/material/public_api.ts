@@ -22,5 +22,7 @@ export { INgxMaterialCheckbox } from './src/models/interface/ngx-material-checkb
 export { INgxMaterialInput } from './src/models/interface/ngx-material-input.interface';
 export { INgxMaterialElement } from './src/models/interface/ngx-material-element.interface';
 
-export { NgxDynamicFormMaterialModule } from './src/ngx-dynamic-form.material.module';
+export { MaterialFormBuilderService } from './src/services/material-form-builder.service';
+
+export { NgxDynamicFormMaterialModule, ComponentsMap } from './src/ngx-dynamic-form.material.module';
 

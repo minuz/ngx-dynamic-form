@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -20,6 +21,7 @@ import { NgxMaterialRadioComponent } from './ngx-material-input/ngx-material-rad
 import { NgxMaterialTextboxComponent } from './ngx-material-input/ngx-material-textbox/ngx-material-textbox.component';
 import { NgxMaterialSelectComponent } from './ngx-material-select/ngx-material-select.component';
 import { NgxMaterialTextareaComponent } from './ngx-material-textarea/ngx-material-textarea.component';
+import { MaterialFormBuilderService } from './services/material-form-builder.service';
 
 const ModuleComponents = [
   NgxMaterialCheckboxComponent,
@@ -41,6 +43,7 @@ export const ComponentsMap = {
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     NgxDynamicFormCoreModule,
     MatTooltipModule,
     MatRadioModule,
@@ -53,6 +56,7 @@ export const ComponentsMap = {
     MatMomentDateModule
   ],
   declarations: ModuleComponents,
-  exports: ModuleComponents
+  exports: ModuleComponents,
+  providers: [MaterialFormBuilderService]
 })
 export class NgxDynamicFormMaterialModule {}

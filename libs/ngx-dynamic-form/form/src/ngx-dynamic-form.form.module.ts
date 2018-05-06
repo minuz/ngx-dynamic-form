@@ -15,8 +15,8 @@ import { NgxFormComponent } from './ngx-form/ngx-form.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatFormFieldModule, 
-    MatTooltipModule,   
+    MatFormFieldModule,
+    MatTooltipModule,
     DynamicModule.withComponents([]),
   ],
   declarations: [

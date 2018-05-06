@@ -46,7 +46,7 @@
       "testTsconfig": "../../../tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -73,6 +73,13 @@
     {
       "name": "@ngx-dynamic-form/form",
       "root": "libs/ngx-dynamic-form/form/src",
+      "test": "../../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
+      "name": "@ngx-dynamic-form/material",
+      "root": "libs/ngx-dynamic-form/material/src",
       "test": "../../../../test.js",
       "appRoot": "",
       "tags": []
