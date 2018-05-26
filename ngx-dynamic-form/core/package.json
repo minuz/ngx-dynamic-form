@@ -1,0 +1,12 @@
+{
+  "name": "@ngx-dynamic-form/core",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "rxjs": "^6.0.0",
+    "uuid": "^3.2.1",
+    "lodash": "^4.17.10",
+    "ng-dynamic-component": "^3.0.0"
+  }
+}

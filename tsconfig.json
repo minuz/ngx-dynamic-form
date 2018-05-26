@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -14,15 +16,16 @@
       "es2017",
       "dom"
     ],
-    "baseUrl": ".",
     "paths": {
-      "@ngx-dynamic-form/*": [
-        "libs/ngx-dynamic-form/*"
+      "core": [
+        "dist/ngx-dynamic-form/core"
+      ],
+      "form": [
+        "dist/ngx-dynamic-form/form"
+      ],
+      "material": [
+        "dist/ngx-dynamic-form/material"
       ]
     }
-  },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  }
 }
