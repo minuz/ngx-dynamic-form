@@ -3,6 +3,6 @@ import { Observable } from 'rxjs';
 
 import { INgxForm } from './interfaces/ngx-form.interface';
 
-export type AnyPredicate = (form: INgxForm, control: AbstractControl, formValue: any) => any;
-export type BooleanPredicate = (form: INgxForm, control: AbstractControl, formValue: any) => boolean;
+export type AnyPredicate = (form?: INgxForm, control?: AbstractControl, formValue?: any) => any;
+export type BooleanPredicate = (form?: INgxForm, control?: AbstractControl, formValue?: any) => boolean;
 export type DataPredicate = (value: any) => Observable<any>;
