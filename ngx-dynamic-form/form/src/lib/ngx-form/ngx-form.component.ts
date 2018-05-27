@@ -1,4 +1,12 @@
-import { Component, DoCheck, Input, IterableDiffer, IterableDiffers, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  DoCheck,
+  Input,
+  IterableDiffer,
+  IterableDiffers,
+  OnInit,
+  ViewEncapsulation
+} from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { INgxForm } from '@ngx-dynamic-form/core';
 
@@ -74,10 +82,12 @@ export class NgxFormComponent implements OnInit, DoCheck {
   }
 
   initSubModels() {
-    const formArray = this.formBuilder.array(
-      this.subModels.map(item => item.formGroup)
-    );
-    this.formGroup.addControl(this.formModel.name, formArray);
+    if (this.subModels.length) {
+      const formArray = this.formBuilder.array(
+        this.subModels.map(item => item.formGroup)
+      );
+      this.formGroup.addControl(this.formModel.name, formArray);
+    }
   }
 
   onSubModelAdded(formArray, formGroup) {
