@@ -5,6 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:core": "ng build core",
+    "build:form": "ng build form",
+    "build:material": "ng build material",
+    "build:libs": "ng build core && ng build form && ng build material",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
