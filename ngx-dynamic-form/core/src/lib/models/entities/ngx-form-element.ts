@@ -5,9 +5,11 @@ import { INgxElementStyling } from '../interfaces/ngx-styling.interface';
 import { INgxFormElementValidation } from '../interfaces/ngx-form-element-validation.interface';
 import { INgxFormElement } from '../interfaces/ngx-form-element.interface';
 import { BooleanPredicate } from './../types';
+import { v4 as newGuid } from 'uuid';
 
 export class NgxFormElement implements INgxFormElement {
 
+  readonly uniqueId = newGuid();
   debug?: boolean;
   elementType?: FormElementType;
   id: string;

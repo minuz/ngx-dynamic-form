@@ -5,6 +5,8 @@ import { INgxFormElementValidation } from './ngx-form-element-validation.interfa
 
 export interface INgxFormElement {
 
+  readonly uniqueId?: string;
+
   /**
    * @description
    * When true, this property will display debug information.
