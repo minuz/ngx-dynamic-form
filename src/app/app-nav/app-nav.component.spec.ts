@@ -1,7 +1,13 @@
+import { LayoutModule } from '@angular/cdk/layout';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxDynamicFormModule } from '@ngx-dynamic-form/form';
+import { ComponentsMap, NgxDynamicFormMaterialModule } from '@ngx-dynamic-form/material';
 
-import { fakeAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MaterialFormComponent } from '../material-form/material-form.component';
 import { AppNavComponent } from './app-nav.component';
+
 
 describe('AppNavComponent', () => {
   let component: AppNavComponent;
@@ -9,7 +15,18 @@ describe('AppNavComponent', () => {
 
   beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppNavComponent ]
+      imports: [
+        BrowserAnimationsModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        NgxDynamicFormMaterialModule,
+        NgxDynamicFormModule.withComponents(ComponentsMap)
+      ],
+      declarations: [ AppNavComponent, MaterialFormComponent ]
     })
     .compileComponents();
 

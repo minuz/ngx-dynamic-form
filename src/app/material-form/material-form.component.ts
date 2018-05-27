@@ -14,7 +14,7 @@ export class MaterialFormComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    const form = NgxForm.Create({debug: true});
+    const form = NgxForm.Create();
     form.addRowWithElement(
       new NgxMaterialTextbox({
         id: 'First Name',
@@ -31,7 +31,6 @@ export class MaterialFormComponent implements OnInit {
       })
     );
     form.addRowWithElement(new NgxMaterialCheckboxGroup({
-      debug: true,
       id: 'chk-group',
       name: 'chkGroup',
       elements: [
