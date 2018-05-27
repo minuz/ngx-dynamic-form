@@ -1,0 +1,15 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "ngx-dynamic-form/core/ng-package.json",
+        "ngx-dynamic-form/core/package.json",
+        "ngx-dynamic-form/form/ng-package.json",
+        "ngx-dynamic-form/form/package.json",
+        "ngx-dynamic-form/material/ng-package.json",
+        "ngx-dynamic-form/material/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
