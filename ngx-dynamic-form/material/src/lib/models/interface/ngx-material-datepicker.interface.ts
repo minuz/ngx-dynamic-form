@@ -91,8 +91,8 @@ export interface INgxMaterialDatepicker extends INgxMaterialInput {
 
   /**
    * @description
-   * Set the date format as standard date conventions. 
+   * Set the date format as standard date conventions.
    * i.e.: dd/MM/YYYY
    */
-  dateFormat?: string;  
+  dateFormat?: string;
 }

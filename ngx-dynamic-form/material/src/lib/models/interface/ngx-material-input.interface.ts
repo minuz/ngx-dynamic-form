@@ -15,7 +15,7 @@ export interface INgxMaterialInput extends INgxMaterialElement {
    * The input placeholder value.
    */
   placeholder?: string;
-  
+
   /**
    * @description
    * Define an icon after the placeholder text.

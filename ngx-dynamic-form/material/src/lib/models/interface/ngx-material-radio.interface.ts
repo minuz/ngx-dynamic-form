@@ -3,7 +3,6 @@ import { BooleanPredicate, LabelPosition } from '@ngx-dynamic-form/core';
 import { INgxMaterialInput } from './ngx-material-input.interface';
 
 export interface INgxMaterialRadio extends INgxMaterialInput {
-  
   /**
    * @description
    * Flag that defines stylings properties from parent.

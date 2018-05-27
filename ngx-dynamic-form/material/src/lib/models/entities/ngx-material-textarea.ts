@@ -4,10 +4,10 @@ import { merge } from 'lodash';
 import { INgxMaterialTextarea } from '../interface/ngx-material-textarea.interface';
 import { NgxMaterialInput } from './ngx-material-input';
 
-export class NgxMaterialTextarea extends NgxMaterialInput implements INgxMaterialTextarea {
-
+export class NgxMaterialTextarea extends NgxMaterialInput
+  implements INgxMaterialTextarea {
   elementType = FormElementType.Textarea;
-  
+
   cols?: number;
   rows?: number;
 

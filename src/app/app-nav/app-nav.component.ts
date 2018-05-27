@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-nav',
+  selector: 'ngx-nav',
   templateUrl: './app-nav.component.html',
   styleUrls: ['./app-nav.component.css']
 })

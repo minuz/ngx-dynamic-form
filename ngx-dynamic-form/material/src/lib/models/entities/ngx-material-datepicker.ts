@@ -4,11 +4,11 @@ import { merge } from 'lodash';
 import { INgxMaterialDatepicker } from '../interface/ngx-material-datepicker.interface';
 import { NgxMaterialInput } from './ngx-material-input';
 
-export class NgxMaterialDatepicker extends NgxMaterialInput implements INgxMaterialDatepicker {
-
+export class NgxMaterialDatepicker extends NgxMaterialInput
+  implements INgxMaterialDatepicker {
   elementType: FormElementType = FormElementType.Datepicker;
   inputType: InputType = InputType.Date;
-  
+
   startView?: 'month' | 'year' = 'month';
   iconPosition: 'prefix' | 'suffix' = 'prefix';
   touchUi?: boolean;
@@ -23,7 +23,7 @@ export class NgxMaterialDatepicker extends NgxMaterialInput implements INgxMater
   panelClass?: string | string[];
   isFontAwesome?: boolean;
   customIcon?: string;
-  dateFormat?: string;  
+  dateFormat?: string;
 
   constructor(opt?: INgxMaterialDatepicker) {
     super(opt);
